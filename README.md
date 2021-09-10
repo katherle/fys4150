@@ -2,7 +2,7 @@
 
 Repository for FYS4150 (Computational Physics) at UiO.
 
-Project 1:
+## Project 1:
 
 To run the project1 c++ code, you need the headers general.hpp and special.hpp. Compiling and running project1.cpp generates files "u_x.txt", "v_x_n.txt", and "sv_x_n.txt" where n is an integer passed at the command line, like so:
 
