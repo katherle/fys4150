@@ -14,4 +14,4 @@ $ ./project1.exe n >> timing.txt
 
 This was done 5 times for each value of n to ensure a spread of results. 
 
-The Jupyter notebook project_1_final.ipynb included in this repo generates the plots and tables used in the report. To run it, first compile and run the c++ code to generate .txt files (or download the files included here). As long as the files are in the same directory as the notebook, it should run; if you have problems you may need to go in and specify the filepaths.
+The Jupyter notebook project_1_final.ipynb included in this repo generates the plots and tables used in the report. To run it, first compile and run the c++ code to generate .txt files for n = 10, 100, 1000, 10.000, 100.000, 1.000.000, and 10.000.000, which takes a minute or two. You will also need to generate or download timing.txt. As long as the resulting files are in the same directory as the notebook, it should run; if you have problems you may need to go in and specify the filepaths.
