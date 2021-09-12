@@ -12,7 +12,7 @@ using namespace std;
 
 vector<double> general(int n, vector<double> a, vector<double> b,
                         vector<double>c, vector<double> g){
-    //take number of steps and g as inputs and solve for v
+    //take number of steps, a, b, c, and g as inputs and solve for v
     //A is the tridiagonal matrix with subdiagonal a, diagonal b, and superdiagonal c
     
     //forward substitution

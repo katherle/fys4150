@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
     
     //get x and find u(x)
     double c = (1 - exp(-10));
-    for (int i = 0; i < 100; i++){
+    for (double i = 0; i < 100; i++){
         double x = i/100;
         double u = 1 - c*x - exp(-10*x);
         //output u and a to file:
@@ -62,19 +62,18 @@ int main(int argc, char* argv[])
     auto t1 = std::chrono::high_resolution_clock::now();
     
     //define x and g
-    vector<double> x1;
-    vector<double> g1;
+    vector<double> x;
+    vector<double> g;
     for(double i = 0; i < n+1; i++){
-        x1.push_back(i/n);
-        g1.push_back(100*exp(i/n)*pow(1.0/n, 2));
+        x.push_back(i/n);
+        g.push_back(100*exp(i/n)*pow(1.0/n, 2));
     }
-    g1.back() = g1.back()+1;
     
     //call general to get v
     vector<double> a1(n-1, -1.0);
     vector<double> b1(n, 2.0);
     vector<double> c1(n-1, -1.0);
-    vector<double> v1 = general(n, a1, b1, c1, g1);
+    vector<double> v1 = general(n, a1, b1, c1, g);
     
     // Stop measuring time
     auto t2 = std::chrono::high_resolution_clock::now();
@@ -84,7 +83,7 @@ int main(int argc, char* argv[])
     
     //write v and x to a file
     for (int i = 0; i < n; i++){
-        ofile1 << setw(width) << setprecision(prec) << scientific << x1[i]
+        ofile1 << setw(width) << setprecision(prec) << scientific << x[i]
               << setw(width) << setprecision(prec) << scientific << v1[i]
               << endl;
     }
@@ -101,17 +100,8 @@ int main(int argc, char* argv[])
     //start measuring time for problem 10
     auto t3 = std::chrono::high_resolution_clock::now();
     
-    //define x and g
-    vector<double> x2;
-    vector<double> g2;
-    for(double i = 0; i < n+1; i++){
-        x2.push_back(i/n);
-        g2.push_back(100*exp(i/n)*pow(1.0/n, 2));
-    }
-    g2.back() = g2.back()+1;
-    
     //call special to get v
-    vector<double> v2 = special(n, g2);
+    vector<double> v2 = special(n, g);
     
     // Stop measuring time
     auto t4 = std::chrono::high_resolution_clock::now();
@@ -120,7 +110,7 @@ int main(int argc, char* argv[])
     
     //write v and x to a file
     for (int i = 0; i < n; i++){
-        ofile2 << setw(width) << setprecision(prec) << scientific << x2[i]
+        ofile2 << setw(width) << setprecision(prec) << scientific << x[i]
               << setw(width) << setprecision(prec) << scientific << v2[i]
               << endl;
     }
