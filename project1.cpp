@@ -64,9 +64,10 @@ int main(int argc, char* argv[])
     //define x and g
     vector<double> x;
     vector<double> g;
+    double g_const = 100*pow(1.0/n, 2); //less FLOPs in the for loop
     for(double i = 0; i < n+1; i++){
         x.push_back(i/n);
-        g.push_back(100*exp(i/n)*pow(1.0/n, 2));
+        g.push_back(g_const*exp(i/n));
     }
     
     //call general to get v
